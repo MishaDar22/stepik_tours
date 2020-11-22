@@ -13,17 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path
-from tours.views import MainView
+
+from tours.views import MainView, custom_handler404
 from tours.views import DepartureView
 from tours.views import TourView
 
-
 urlpatterns = [
     path('', MainView.as_view()),
-    path('departure/<str:departure>', DepartureView.as_view()),
-    path('tour/<int:id>', TourView.as_view()),
+    path('departure/<str:departure>/', DepartureView.as_view()),
+    path('tour/<int:id>/', TourView.as_view()),
     path('admin/', admin.site.urls),
 ]
+
+handler404 = custom_handler404
