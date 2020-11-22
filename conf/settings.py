@@ -26,9 +26,7 @@ SECRET_KEY = 'owobztli=5c$yesm6#f3t!-o70s#f@#h28ce)rcrdfblq!__$q'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 STATIC_ROOT = 'static'
-
 
 # Application definition
 

@@ -13,7 +13,7 @@ class MainView(View):
         id_tour = random.sample(range(1, (len(tours) + 1)), k=6)
         select_tours = {}
         for i in id_tour:
-            select_tours[i] = tours.get(i)
+            select_tours[i] = tours[i]
         context = {
             'title': title,
             'subtitle': subtitle,
