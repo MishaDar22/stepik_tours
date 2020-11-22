@@ -36,7 +36,7 @@ class DepartureView(View):
                 list_id.append(tour_id)
                 list_prices.append(tours[tour_id]["price"])
                 list_amount_nights.append(tours[tour_id]['nights'])
-        if not departure in departures.keys():
+        if departure not in departures.keys():
             raise Http404
         min_price = min(list_prices)
         max_price = max(list_prices)
@@ -63,11 +63,10 @@ class TourView(View):
             'departure': departure,
             'title': title
         }
-        if not id in tours.keys():
+        if id not in tours.keys():
             raise Http404
         return render(request, "tour.html", context=context)
 
 
 def custom_handler404(request, exception):
     return HttpResponseNotFound('Что-то сломалось :(')
-
